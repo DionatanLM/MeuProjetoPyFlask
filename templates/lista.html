@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gpmi - Gestão de Portifólio de Projetos</title>
+  </head>
+
+  <style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 22px;
+      font-family: Montserrat;	
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .button2 {background-color: #008CBA;} /* Blue */
+    .button3 {background-color: #f44336;} /* Red */ 
+    .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+    .button5 {background-color: #555555;} /* Black */
+    </style>
+
+  <body>
+    <div class="container">
+        <div>
+            <h1>{{ titulo }}</h1>
+        </div>
+       
+
+        
+       <a href="{{ url_for('new') }}" class="button">Novo Projeto</a>
+       
+
+    
+        <table >
+            <thead >
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Senha</th>
+                    <th>Telefone</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                  {% for projeto in projetos %}
+                    <tr>
+                        <td>{{ projeto.nome }}</td>
+                        <td>{{ projeto.sobrenome }}</td>   
+                        <td>{{ projeto.senha }}</td>   
+                        <td>{{ projeto.telefone }}</td>   
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    </div>
+  </body>
+</html>
